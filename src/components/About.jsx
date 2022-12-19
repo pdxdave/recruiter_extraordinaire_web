@@ -26,7 +26,7 @@ const About = () => {
 }
 
 const Wrapper = styled.section`
-   width: 1200px;
+    width: 1200px;
     max-width: 95%;
     margin: 5em auto;
 
@@ -52,6 +52,7 @@ const Wrapper = styled.section`
     
     .about_container {
         display: flex;
+        flex-direction: row;
         flex-wrap: wrap;
     }
     img {
