@@ -51,7 +51,7 @@ const Wrapper = styled.section`
         font-weight: normal;
     }
     p {
-        font-size: 1.2rem;
+        font-size: 1rem;
         color: var(--clr-gray-text);
     }
     
@@ -61,7 +61,7 @@ const Wrapper = styled.section`
         flex-wrap: wrap;
     } */
     img {
-        flex: 1;
+        /* flex: 1; */
         width: 100%;
         border-radius: 10px;
     }
@@ -75,10 +75,14 @@ const Wrapper = styled.section`
             flex-direction: row;
         }
         p {
-            font-size: 1rem;
+            font-size: 1.2rem;
         }
         .about_content {
             padding-bottom: 1em;
+            flex: 1;
+        }
+        img {
+          flex: 1;
         }
     }
 
