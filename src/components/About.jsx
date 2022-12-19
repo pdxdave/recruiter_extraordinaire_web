@@ -32,7 +32,7 @@ const Wrapper = styled.section`
 
     .about_container {
       display: grid;
-      grid-template-columns: .75fr 1fr;
+      grid-template-columns: 1fr 1fr;
       column-gap: 40px;
     }
 
@@ -61,7 +61,7 @@ const Wrapper = styled.section`
         border-radius: 10px;
     }
    
-    @media screen and (max-width: 1120px){
+    @media screen and (max-width: 1130px){
       .about_container {
         display: grid;
         grid-template-columns: 1fr;
