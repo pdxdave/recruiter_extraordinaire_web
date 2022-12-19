@@ -1,4 +1,4 @@
-import {Header, About, Services} from '../components'
+import {Header, About, Services, Testimonials, Footer} from '../components'
 
 const Home = () => {
   return (
@@ -6,6 +6,8 @@ const Home = () => {
       <Header />
       <About />
       <Services />
+      <Testimonials />
+      <Footer />
     </>
   )
 }

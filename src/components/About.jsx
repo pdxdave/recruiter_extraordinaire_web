@@ -67,7 +67,10 @@ const Wrapper = styled.section`
         grid-template-columns: 1fr;
         row-gap: 20px;
       }
+      p {
+        font-size: 1rem;
     }
+  }
     
 
 `
