@@ -203,10 +203,15 @@ const Wrapper = styled.footer`
      max-width: 100%;
      font-family: inherit;
      font-size: 1.2rem;
-     text-indent: 3px;
+     text-indent: 6px;
      background: var(--clr-bg-textbox);
      border: none;
    }
+
+   input:focus, textarea:focus {
+    outline: none;
+   }
+
    input {
     padding: .5em 0;
    }
