@@ -32,7 +32,8 @@ const Wrapper = styled.section`
 
     .about_container {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: .75fr 1fr;
+      column-gap: 40px;
     }
 
     .bar {
@@ -51,7 +52,7 @@ const Wrapper = styled.section`
         font-weight: normal;
     }
     p {
-        font-size: 1rem;
+        font-size: 1.2rem;
         color: var(--clr-gray-text);
     }
     
@@ -60,7 +61,13 @@ const Wrapper = styled.section`
         border-radius: 10px;
     }
    
-    
+    @media screen and (max-width: 1120px){
+      .about_container {
+        display: grid;
+        grid-template-columns: 1fr;
+        row-gap: 20px;
+      }
+    }
     
 
 `
