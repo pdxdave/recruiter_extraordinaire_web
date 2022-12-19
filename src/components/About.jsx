@@ -30,6 +30,11 @@ const Wrapper = styled.section`
     max-width: 95%;
     margin: 5em auto;
 
+    .about_container {
+      display: flex;
+      flex-direction: column;
+    }
+
     .bar {
         display: inline-block;
         height: 10px;
@@ -50,11 +55,11 @@ const Wrapper = styled.section`
         color: var(--clr-gray-text);
     }
     
-    .about_container {
+    /* .about_container {
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
-    }
+    } */
     img {
         flex: 1;
         width: 100%;
@@ -65,9 +70,9 @@ const Wrapper = styled.section`
         padding-right: 2em;
     }
     
-    @media (max-width: 1130px){
+    @media (min-width: 1130px){
         .about_container {
-            flex-direction: column;
+            flex-direction: row;
         }
         p {
             font-size: 1rem;
