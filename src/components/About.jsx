@@ -64,7 +64,7 @@ const Wrapper = styled.section`
         padding-right: 2em;
     }
     
-    @media only screen and (max-width: 1130px){
+    @media (max-width: 1130px){
         .about_container {
             flex-direction: column;
         }
