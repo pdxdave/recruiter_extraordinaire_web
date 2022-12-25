@@ -21,7 +21,7 @@ const Header = () => {
                   your needs.
                 </p>
                 <div className='header_search_jobs'>
-                  <button onClick={() => navigate('/listings')}>Search Jobs</button>
+                  <button onClick={() => navigate('/jobs-page')}>Search Jobs</button>
                 </div> 
             </div>
         </div>

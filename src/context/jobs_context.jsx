@@ -1,18 +1,24 @@
-import React, {useReducer, useContext, useEffect} from 'react';
-import { jobs_url as url} from '../utils/helper';
 import axios from 'axios';
+import React, {useContext, useEffect, useReducer} from 'react';
+import reducer from '../reducers/jobs_reducer';
+import { jobs_url as url } from '../utils/helper';
+
 import {
     GET_JOBS_BEGIN,
     GET_JOBS_SUCCESS,
-    GET_JOBS_ERROR
+    GET_JOBS_ERROR,
+    GET_SINGLE_JOB_BEGIN,
+    GET_SINGLE_JOB_SUCCESS,
+    GET_SINGLE_JOB_ERROR        
 } from '../actions'
-
-import reducer from '../reducers/jobs_reducer'
 
 const initialState = {
     jobs_loading: false,
     jobs_error: false,
-    jobs: []
+    jobs: [],
+    single_job_loading: false,
+    single_job_error: false,
+    single_job: {}
 }
 
 const JobsContext = React.createContext()
@@ -24,12 +30,23 @@ export const JobsProvider = ({children}) => {
     const fetchJobs = async (url) => {
         dispatch({ type: GET_JOBS_BEGIN})
         try {
-            const response = await axios(url)
-            const jobs = response.data
-            console.log(jobs)
+            const response = await axios.get(url)
+            const jobs = response.data 
+    
             dispatch({ type: GET_JOBS_SUCCESS, payload: jobs})
         } catch (error) {
             dispatch({ type: GET_JOBS_ERROR})
+        }
+    }
+
+    const fetchSingleJob = async (url) => {
+        dispatch({ type: GET_SINGLE_JOB_BEGIN})
+        try {
+            const response = await axios.get(url)
+            const singleJob = response.data
+            dispatch({ type: GET_SINGLE_JOB_SUCCESS, payload: singleJob})
+        } catch (error) {
+            dispatch({ type: GET_SINGLE_JOB_ERROR})
         }
     }
 
@@ -39,14 +56,16 @@ export const JobsProvider = ({children}) => {
 
     return (
         <JobsContext.Provider value={{
-            ...state
-
+            ...state,
+            fetchSingleJob
         }}>
             {children}
         </JobsContext.Provider>
     )
 }
 
+
 export const useJobsContext = () => {
     return useContext(JobsContext)
-}
+  }
+  

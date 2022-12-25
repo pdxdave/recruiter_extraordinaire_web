@@ -118,6 +118,6 @@ h5 {
 .listings_img {
   background-image: url('./assets/listing.jpg');
   background-size: cover;
-  height: 50vh;
+  height: 70vh;
   background-position: center;
 }

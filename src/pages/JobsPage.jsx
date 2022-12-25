@@ -1,7 +1,9 @@
 import {Footer} from '../components';
 import styled from 'styled-components'
+import {JobsList, Filters} from '../components'
+// the filtering text boxes should be here
 
-const Listings = () => {
+const JobsPage = () => {
   return (
     <Wrapper>
         <header className='listings_img'></header>
@@ -11,7 +13,13 @@ const Listings = () => {
             <h4>JOB OPPORTUNITIES</h4>
             <h5>EXPLORE OUR CURRENT LISTINGS</h5>
           </div>
+          <div>
+            <Filters />
+            <JobsList />
+          </div>
+        
         </section>
+        
         <Footer />
     </Wrapper>
   )
@@ -41,4 +49,4 @@ const Wrapper = styled.div`
     }
 `
 
-export default Listings
+export default JobsPage

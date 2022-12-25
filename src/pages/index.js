@@ -1,7 +1,10 @@
 import Home from './Home';
-import Listings from './Listings';
+import JobsPage from './JobsPage';
+import SingleJobPage from './SingleJobPage';
+
 
 export {
     Home,
-    Listings
+    JobsPage,
+    SingleJobPage
 }
