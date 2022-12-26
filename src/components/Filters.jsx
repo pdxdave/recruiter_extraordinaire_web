@@ -24,7 +24,7 @@ const Filters = () => {
         <form onSubmit={(e) => e.preventDefault()}>
           {/* search input */}
           <div className="search-items">
-          <div>
+          <div className='test'>
             <input 
               type="text" 
               name="text"
@@ -35,7 +35,7 @@ const Filters = () => {
            />
           </div>
           {/* cities */}
-          <div>
+          <div className='test'>
             {/* <h5>city</h5> */}
             <select 
                 name="city" 
@@ -56,10 +56,12 @@ const Filters = () => {
 }
 
 const Wrapper = styled.main`
+
   
-  .search-items {
-    display: flex;
-    align-items: center;
+  
+.search-items {
+    display: grid;
+    grid-template-columns: .25fr 1fr;
   }
 
 input {
@@ -69,10 +71,6 @@ input {
   outline: none;
 }
 
-/* h5 {
- 
-  font-size: 1.2rem;
-} */
 select {
   font-size: 1.2rem;
   padding: .5em .5em;
@@ -84,19 +82,17 @@ select {
   outline: none;
 }
 
-select:focus > option {
-  color: rgb(119,119,119);
-  background-color: transparent;
-  border: none;
-}
-
 @media screen and (max-width: 460px){
   .search-items {
-    display: flex;
-    /* align-items: center; */
-    flex-direction: column;
-    width: 95%;
+    display: grid;
+    grid-template-columns: 1fr;
   }
+  
+  select {
+    margin-left: 0;
+    margin-top: .5em;
+  }
+ 
 }
 `
 
