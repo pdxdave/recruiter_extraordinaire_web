@@ -81,7 +81,7 @@ const Wrapper = styled.main`
   font-family: inherit;
   color: var(--clr-reg-text);
   font-size: 1.2rem;
-  padding: .15em .5em;
+  padding: .15em .4em;
   border: none;
   border-radius: var(--radius);
   cursor: pointer;
