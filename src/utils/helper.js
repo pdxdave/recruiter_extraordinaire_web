@@ -5,5 +5,5 @@ export const single_job_url = `https://rec-extra-api.netlify.app/api/single-job?
 export const getUniqueValues = (data, type) => {
     let unique = data.map((item) => item[type])
     
-    return ['all', ...new Set(unique)]
+    return ['all-locations', ...new Set(unique)]
 }

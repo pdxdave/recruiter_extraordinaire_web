@@ -11,5 +11,3 @@ export const UPDATE_FILTERS = "UPDATE_FILTERS"
 export const FILTER_JOBS = "FILTER_JOBS"
 export const CLEAR_FILTERS = "CLEAR_FILTERS"
 
-export const UPDATE_SORT = "UPDATE_SORT"
-export const SORT_JOBS = "SORT_JOBS"

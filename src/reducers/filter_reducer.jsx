@@ -1,7 +1,5 @@
 import {
     LOAD_JOBS,
-    UPDATE_SORT,
-    SORT_JOBS,
     UPDATE_FILTERS,
     FILTER_JOBS,
     CLEAR_FILTERS
@@ -23,8 +21,25 @@ const filter_reducer = (state, action) => {
     }
 
     if(action.type === FILTER_JOBS){
-        return {...state}
+        const {all_jobs} = state
+        const {text, city} = state.filters
+        //making a copy of all the jobs before filtering
+        let tempJobs = [...all_jobs]
+
+        if(text){
+            tempJobs = tempJobs.filter((job) => {
+                return job.title.toLowerCase().startsWith(text)
+            })
+        }
+
+        if(city !== 'all-locations'){
+            tempJobs = tempJobs.filter((c) => c.city === city)
+        }
+
+        return {...state, filtered_jobs: tempJobs}
     }
+
+
 
     if(action.type === CLEAR_FILTERS){
         return {
@@ -32,7 +47,7 @@ const filter_reducer = (state, action) => {
                 filters: {
                     ...state.filters,
                     text: '',
-                    city: 'all'
+                    city: 'all-locations'
                 }
         }
     }

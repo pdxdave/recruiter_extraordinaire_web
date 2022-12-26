@@ -2,8 +2,6 @@ import React , {useEffect, useContext, useReducer} from 'react';
 import reducer from '../reducers/filter_reducer';
 import {
     LOAD_JOBS,
-    UPDATE_SORT,
-    SORT_JOBS,
     UPDATE_FILTERS,
     FILTER_JOBS,
     CLEAR_FILTERS
@@ -16,7 +14,7 @@ const initialState = {
     all_jobs: [],
     filters: {
         text: '',
-        city: ''
+        city: 'all-locations'
     }
 }
 

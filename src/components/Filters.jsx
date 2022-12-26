@@ -20,11 +20,10 @@ const Filters = () => {
     const navigate = useNavigate()
 
   return (
-    <Wrapper>
-      
-      <div>
+      <Wrapper>
         <form onSubmit={(e) => e.preventDefault()}>
           {/* search input */}
+          <div className="search-items">
           <div>
             <input 
               type="text" 
@@ -37,7 +36,7 @@ const Filters = () => {
           </div>
           {/* cities */}
           <div>
-            <h5>city</h5>
+            {/* <h5>city</h5> */}
             <select 
                 name="city" 
                 value={city} 
@@ -48,17 +47,57 @@ const Filters = () => {
               })}
             </select>
           </div>
+          </div>
         </form>
         <button type="button" className='' onClick={clearFilters}>clear</button>
         <button onClick={() => navigate('/')}>home</button>
-      </div>
-    </Wrapper>
+      </Wrapper>
   )
 }
 
-const Wrapper = styled.section`
+const Wrapper = styled.main`
+  
+  .search-items {
+    display: flex;
+    align-items: center;
+  }
 
+input {
+  font-size: 1.2rem;
+  padding: .5em 0;
+  text-indent: 4px;
+  outline: none;
+}
 
+/* h5 {
+ 
+  font-size: 1.2rem;
+} */
+select {
+  font-size: 1.2rem;
+  padding: .5em .5em;
+  margin-left: 1em;
+  font-size: 1.2rem;
+  color: rgb(119,119,119);
+  background: transparent;
+  border: rgb(79,79,79) 1px solid;
+  outline: none;
+}
+
+select:focus > option {
+  color: rgb(119,119,119);
+  background-color: transparent;
+  border: none;
+}
+
+@media screen and (max-width: 460px){
+  .search-items {
+    display: flex;
+    /* align-items: center; */
+    flex-direction: column;
+    width: 95%;
+  }
+}
 `
 
 export default Filters
