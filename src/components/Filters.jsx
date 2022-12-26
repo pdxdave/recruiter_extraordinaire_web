@@ -49,15 +49,44 @@ const Filters = () => {
           </div>
           </div>
         </form>
-        <button type="button" className='' onClick={clearFilters}>clear</button>
-        <button onClick={() => navigate('/')}>home</button>
+        <button 
+            type="button" 
+            className='btn-clear' 
+            onClick={clearFilters}
+        >Clear</button>
+        <button 
+          type="button" 
+          onClick={() => navigate('/')} 
+          className="btn-home">Home</button>
       </Wrapper>
   )
 }
 
 const Wrapper = styled.main`
 
-  
+.btn-clear {
+  background-color: var(--clr-btn);
+  margin-top: .5em;
+  font-family: inherit;
+  color: var(--clr-reg-text);
+  font-size: 1.2rem;
+  padding: .15em .5em;
+  border: none;
+  border-radius: var(--radius);
+  cursor: pointer;
+}
+
+.btn-home {
+  background-color: var(--clr-brown-text);
+  font-family: inherit;
+  color: var(--clr-reg-text);
+  font-size: 1.2rem;
+  padding: .15em .5em;
+  border: none;
+  border-radius: var(--radius);
+  cursor: pointer;
+  margin-left: .5em;
+}
   
 .search-items {
     display: grid;
