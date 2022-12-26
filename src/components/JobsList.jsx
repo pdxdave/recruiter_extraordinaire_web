@@ -17,7 +17,7 @@ const JobsList = () => {
 }
 const Wrapper = styled.main`
   
-
+ 
 `
 
 export default JobsList
