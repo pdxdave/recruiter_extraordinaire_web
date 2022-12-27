@@ -1,5 +1,8 @@
 import styled from 'styled-components'
 import {Link} from 'react-router-dom'
+import {MdLocationOn} from 'react-icons/md'
+import {TbStack2} from 'react-icons/tb'
+import {MdDescription} from 'react-icons/md'
 
 // link to singleJobPage is here
 
@@ -7,18 +10,24 @@ const Job = ({jobs}) => {
   return (
     <Wrapper>
       {jobs.map((job) => {
-        const {id, title, stack, city, state} = job
+        const {id, title, stack, city, state, description} = job
         return (
         
               <article key={id}>
-                  <h5>{title}</h5>
+                  <p className='title'>{title}</p>
                   <div className='location'>
+                    <MdLocationOn />
                     <p>{city}, {state}</p>
                   </div>
-                  <p>Stack: {stack}</p>
-                    <Link to={`/jobs-page/${id}`}>
-                        More Details
-                    </Link>
+
+                  <div className='stack'>
+                    <TbStack2 />
+                    <p>{stack}</p>
+                  </div> 
+                 
+                  <Link to={`/jobs-page/${id}`}>
+                      More Details
+                  </Link>
               </article>
           )
       })}
@@ -33,22 +42,29 @@ const Wrapper = styled.div`
   article {
     margin: 1.2em 0;
     padding: 1em;
-
-    box-shadow: -1px 4px 6px 1px rgba(0,0,0,0.2);
-    -webkit-box-shadow: -1px 4px 6px 1px rgba(0,0,0,0.2);
-    -moz-box-shadow: -1px 4px 6px 1px rgba(0,0,0,0.2);
-    border-radius: var(--radius);
   }
 
-  
-  h5, .location{
+
+  .title {
+    font-size: 1.2rem;
     text-transform: capitalize;
+    color: var(--clr-brown-text);
   }
-  h5 {
-    margin-bottom: 0;
+  .location {
+    display: flex;
+    align-items: center;
+    text-transform: capitalize;
+    p {
+      margin-left: .5em;
+    }
   }
-  p {
-    color: black;
+
+  .stack {
+    display: flex;
+    align-items: center;
+    p {
+      margin-left: .5em;
+    }
   }
 `
 
