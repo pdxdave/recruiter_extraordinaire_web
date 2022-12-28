@@ -21,7 +21,7 @@ const Job = ({jobs}) => {
                   </div>
 
                   <div className='stack'>
-                    <TbStack2 />
+                    <TbStack2 className='bla'/>
                     <p>{stack}</p>
                   </div> 
                  
@@ -71,6 +71,9 @@ const Wrapper = styled.div`
   @media screen and (max-width: 647px){
     .stack {
       align-items: start;
+    }
+    .bla{
+      margin-top: .25em;
     }
   }
 `
