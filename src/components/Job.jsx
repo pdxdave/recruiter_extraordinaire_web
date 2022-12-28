@@ -24,6 +24,11 @@ const Job = ({jobs}) => {
                     <TbStack2 className='bla'/>
                     <p>{stack}</p>
                   </div> 
+
+                  <div className='desc'>
+                    <MdDescription className='bla2'/>
+                    <p>{description}</p>
+                  </div> 
                  
                   <Link to={`/jobs-page/${id}`}>
                       More Details
@@ -59,13 +64,26 @@ const Wrapper = styled.div`
     }
   }
 
-  .stack {
+  .stack{
     display: grid;
     grid-template-columns: .01fr 1fr;
     align-items: center;
     p {
       margin-left: .5em;
     }
+  }
+
+  .desc {
+    display: grid;
+    grid-template-columns: .01fr 1fr;
+    align-items: start;
+    p {
+      margin-left: .5em;
+    }
+  }
+
+  .bla2 {
+    margin-top: .25em;
   }
 
   @media screen and (max-width: 647px){
