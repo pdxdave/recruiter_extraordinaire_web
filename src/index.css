@@ -20,6 +20,12 @@
   --clr-apply-text-box: #FCF9F9;
   --clr-apply-text-box-boarder: #9C9090;
 
+  /* icons */
+  --clr-location: #bf4040;
+  --clr-stack: #3359cc;
+  --clr-desc: #737373;
+
+
   /* Misc */
   --clr-stock-bg: #fff;
   --clr-black: #000;

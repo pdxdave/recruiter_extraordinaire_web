@@ -16,17 +16,17 @@ const Job = ({jobs}) => {
               <article key={id}>
                   <p className='title'>{title}</p>
                   <div className='location'>
-                    <MdLocationOn className='test'/>
+                    <MdLocationOn className='location-icon'/>
                     <p>{city}, {state}</p>
                   </div>
 
                   <div className='stack'>
-                    <TbStack2 className='bla'/>
+                    <TbStack2 className='stack-icon'/>
                     <p>{stack}</p>
                   </div> 
 
                   <div className='desc'>
-                    <MdDescription className='bla2'/>
+                    <MdDescription className='desc-icon'/>
                     <p>{description && description.slice(0, 180)}...<Link to={`/jobs-page/${id}`}>
                       More Details
                   </Link>  </p>
@@ -44,20 +44,9 @@ const Wrapper = styled.div`
 
   margin: 2em 0;
 
-  .test {
-    color: #bf4040;
-  }
-.bla {
-  color: #3359cc;
-}
-.bla2 {
-  color: #737373;
-}
   article {
     margin: 1.2em 0;
-    padding: 1em;
   }
-
 
   .title {
     font-size: 1.2rem;
@@ -72,6 +61,9 @@ const Wrapper = styled.div`
       margin-left: .5em;
     }
   }
+  .location-icon {
+    color: var(--clr-location);
+  }
 
   .stack{
     display: grid;
@@ -80,6 +72,9 @@ const Wrapper = styled.div`
     p {
       margin-left: .5em;
     }
+  }
+  .stack-icon {
+    color: var(--clr-stack);
   }
 
   .desc {
@@ -90,8 +85,8 @@ const Wrapper = styled.div`
       margin-left: .5em;
     }
   }
-
-  .bla2 {
+  .desc-icon {
+    color: var(--clr-desc);
     margin-top: .25em;
   }
 
@@ -99,7 +94,7 @@ const Wrapper = styled.div`
     .stack {
       align-items: start;
     }
-    .bla{
+    .stack-icon{
       margin-top: .25em;
     }
   }
