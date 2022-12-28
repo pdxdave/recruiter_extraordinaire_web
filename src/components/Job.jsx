@@ -16,7 +16,7 @@ const Job = ({jobs}) => {
               <article key={id}>
                   <p className='title'>{title}</p>
                   <div className='location'>
-                    <MdLocationOn />
+                    <MdLocationOn className='test'/>
                     <p>{city}, {state}</p>
                   </div>
 
@@ -27,12 +27,12 @@ const Job = ({jobs}) => {
 
                   <div className='desc'>
                     <MdDescription className='bla2'/>
-                    <p>{description}</p>
+                    <p>{description && description.slice(0, 180)}...<Link to={`/jobs-page/${id}`}>
+                      More Details
+                  </Link>  </p>
                   </div> 
                  
-                  <Link to={`/jobs-page/${id}`}>
-                      More Details
-                  </Link>
+                  
               </article>
           )
       })}
@@ -44,6 +44,15 @@ const Wrapper = styled.div`
 
   margin: 2em 0;
 
+  .test {
+    color: #bf4040;
+  }
+.bla {
+  color: #3359cc;
+}
+.bla2 {
+  color: #737373;
+}
   article {
     margin: 1.2em 0;
     padding: 1em;
