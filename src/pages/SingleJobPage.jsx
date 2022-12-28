@@ -2,6 +2,7 @@ import {useEffect} from 'react'
 import {useParams} from 'react-router-dom';
 import {useJobsContext} from '../context/jobs_context'
 import {single_job_url as url} from '../utils/helper';
+import styled from 'styled-components'
 
 const SingleJobPage = () => {
   const {id} = useParams()
@@ -19,7 +20,9 @@ const SingleJobPage = () => {
 
     const {
       title,
-      description
+      description,
+      city,
+      state
     } = job
   
     if(loading){
@@ -30,14 +33,36 @@ const SingleJobPage = () => {
     }
     
   return (
-    <div>
-        SingleJobPage
-        <p>{title}</p>
-        <p>{description}</p>
+    <Wrapper>
+      <header className='jobs_img'></header>
+      <section>
+          <div className="bar"></div>
+          <div className="listings_content">
+            <h4>{title}</h4>
+            <h5>{city}, {state}</h5>
+          </div>
+
+
+        <div>
+          <h4>Description</h4>
+           <p>{description}</p>
+        </div>
        
-    </div>
+        </section>
+      
+        
+       
+    </Wrapper>
   )
 }
 
+const Wrapper = styled.div`
+  
+ section {
+    width: 1200px;
+    max-width: 95%;
+    margin: 5em auto;
+  }
+`
 
 export default SingleJobPage

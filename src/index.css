@@ -127,3 +127,10 @@ h5 {
   height: 60vh;
   background-position: center;
 }
+
+.jobs_img {
+  background-image: url('./assets/jobs.jpg');
+  background-size: cover;
+  height: 60vh;
+  background-position: center;
+}
