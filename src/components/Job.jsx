@@ -60,10 +60,17 @@ const Wrapper = styled.div`
   }
 
   .stack {
-    display: flex;
+    display: grid;
+    grid-template-columns: .01fr 1fr;
     align-items: center;
     p {
       margin-left: .5em;
+    }
+  }
+
+  @media screen and (max-width: 647px){
+    .stack {
+      align-items: start;
     }
   }
 `
