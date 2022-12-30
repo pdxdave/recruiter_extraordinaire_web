@@ -47,7 +47,7 @@ const SingleJobPage = () => {
           <div className="listings_content">
             <h4>{title}</h4>
             <h5>{city}, {state}</h5>
-            <button onClick={() => navigate('/jobs-page')}>return to jobs</button>
+            <button onClick={() => navigate('/jobs-page')} className="btn-jobs">return to jobs</button>
           </div>
 
 
@@ -133,6 +133,19 @@ const Wrapper = styled.div`
   .duties, .requirements, .benefits {
     margin-top: 1em;
   }
+
+  .btn-jobs {
+  background-color: var(--clr-btn);
+  font-family: inherit;
+  color: var(--clr-reg-text);
+  font-size: 1.2rem;
+  padding: .15em .4em;
+  border: none;
+  border-radius: var(--radius);
+  cursor: pointer;
+  /* margin-left: .5em; */
+  text-transform: capitalize;
+}
 `
 
 export default SingleJobPage
