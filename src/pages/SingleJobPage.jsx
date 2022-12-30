@@ -1,11 +1,12 @@
-import {useEffect} from 'react'
-import {useParams} from 'react-router-dom';
+import {useEffect, } from 'react'
+import {useParams, useNavigate} from 'react-router-dom';
 import {useJobsContext} from '../context/jobs_context'
 import {single_job_url as url} from '../utils/helper';
 import styled from 'styled-components'
 import { v4 as uuidv4 } from 'uuid';
 
 const SingleJobPage = () => {
+  const navigate = useNavigate()
   const {id} = useParams()
   const {
     single_job_loading: loading, 
@@ -30,7 +31,7 @@ const SingleJobPage = () => {
     } = job
   
     if(loading){
-      return <p>loading...</p>
+      return <p style={{textAlign: "center", fontSize: "2rem", paddingTop: "3em"}}>Fetching Your Selection</p>
     }
     if(error){
       return <p>error...</p>
@@ -46,14 +47,15 @@ const SingleJobPage = () => {
           <div className="listings_content">
             <h4>{title}</h4>
             <h5>{city}, {state}</h5>
+            <button onClick={() => navigate('/jobs-page')}>return to jobs</button>
           </div>
 
 
-        <div>
+        <div className='description'>
           <h4>Description</h4>
            <p>{description}</p>
         </div>
-        <div>
+        <div className='duties'>
           <h4>Duties</h4>
             <ul>
               {duties && duties.split('.').map((item) => {
@@ -63,7 +65,7 @@ const SingleJobPage = () => {
               })}
             </ul>   
         </div>
-        <div>
+        <div className='requirements'>
           <h4>Requirements</h4>
             <ul>
               {requirements && requirements.split('.').map((item) => {
@@ -74,7 +76,7 @@ const SingleJobPage = () => {
             </ul>   
         </div>
 
-        <div>
+        <div className='benefits'>
           <h4>Benefits</h4>
             <ul>
               {benefits && benefits.split('.').map((item) => {
@@ -99,12 +101,37 @@ const Wrapper = styled.div`
     margin: 5em auto;
   }
 
+
+  .bar {
+    display: inline-block;
+    height: 10px;
+    width: 120px;
+    background-color: var(--clr-btn);
+    margin-bottom: .75em;
+    }
+  h4 {
+    color: var(--clr-gray-text);
+    font-weight: normal;
+    }
+  h5 {
+    color: var(--clr-brown-text);
+    font-weight: normal;
+    text-transform: capitalize;
+    }
+
   ul {
     padding-left: 10px;
   }
 
   ul li {
     list-style-type: circle;
+  }
+
+  .description {
+    margin-top: 2em;
+  }
+  .duties, .requirements, .benefits {
+    margin-top: 1em;
   }
 `
 
