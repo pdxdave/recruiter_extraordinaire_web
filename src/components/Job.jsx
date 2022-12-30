@@ -16,12 +16,12 @@ const Job = ({jobs}) => {
               <article key={id}>
                   <p className='title'>{title}</p>
                   <div className='location'>
-                    <MdLocationOn className='location-icon'/>
+                    <MdLocationOn className='desc-icon'/>
                     <p>{city}, {state}</p>
                   </div>
 
                   <div className='stack'>
-                    <TbStack2 className='stack-icon'/>
+                    <TbStack2 className='desc-icon'/>
                     <p>{stack}</p>
                   </div> 
 

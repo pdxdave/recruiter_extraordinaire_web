@@ -3,6 +3,7 @@ import {useParams} from 'react-router-dom';
 import {useJobsContext} from '../context/jobs_context'
 import {single_job_url as url} from '../utils/helper';
 import styled from 'styled-components'
+import { v4 as uuidv4 } from 'uuid';
 
 const SingleJobPage = () => {
   const {id} = useParams()
@@ -22,7 +23,10 @@ const SingleJobPage = () => {
       title,
       description,
       city,
-      state
+      state,
+      duties,
+      requirements,
+      benefits
     } = job
   
     if(loading){
@@ -31,7 +35,9 @@ const SingleJobPage = () => {
     if(error){
       return <p>error...</p>
     }
+
     
+   
   return (
     <Wrapper>
       <header className='jobs_img'></header>
@@ -47,11 +53,40 @@ const SingleJobPage = () => {
           <h4>Description</h4>
            <p>{description}</p>
         </div>
-       
+        <div>
+          <h4>Duties</h4>
+            <ul>
+              {duties && duties.split('.').map((item) => {
+                return (
+                    <li key={uuidv4()}>{item}</li>
+                )
+              })}
+            </ul>   
+        </div>
+        <div>
+          <h4>Requirements</h4>
+            <ul>
+              {requirements && requirements.split('.').map((item) => {
+                return (
+                    <li key={uuidv4()}>{item}</li>
+                )
+              })}
+            </ul>   
+        </div>
+
+        <div>
+          <h4>Benefits</h4>
+            <ul>
+              {benefits && benefits.split('.').map((item) => {
+                return (
+                    <li key={uuidv4()}>{item}</li>
+                )
+              })}
+            </ul>   
+        </div>
+
+
         </section>
-      
-        
-       
     </Wrapper>
   )
 }
@@ -62,6 +97,14 @@ const Wrapper = styled.div`
     width: 1200px;
     max-width: 95%;
     margin: 5em auto;
+  }
+
+  ul {
+    padding-left: 10px;
+  }
+
+  ul li {
+    list-style-type: circle;
   }
 `
 
