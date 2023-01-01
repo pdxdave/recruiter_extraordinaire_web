@@ -52,7 +52,7 @@ const SingleJobPage = () => {
           <div className="listings_content">
             <h4>{title}</h4>
             <h5>{city}, {state}</h5>
-            <button onClick={() => navigate('/jobs-page')} className="btn-jobs">return to jobs</button>
+            {/* <button onClick={() => navigate('/jobs-page')} className="btn-jobs">return to jobs</button> */}
           </div>
 
 
@@ -92,7 +92,8 @@ const SingleJobPage = () => {
             </ul>   
         </div>
         <div>
-          <button className='btn-interested' onClick={() => setOpenModal(true)}>I'm Interested!</button>
+           <button className='btn-interested' onClick={() => setOpenModal(true)}>I'm Interested!</button>
+           <button onClick={() => navigate('/jobs-page')} className="btn-jobs">Return To Jobs</button>
         </div>
         </section>
     </Wrapper>
@@ -142,7 +143,7 @@ const Wrapper = styled.div`
   }
 
   .btn-jobs {
-  background-color: var(--clr-btn);
+  background-color: var(--clr-brown-text);
   font-family: inherit;
   color: var(--clr-reg-text);
   font-size: 1.2rem;
@@ -153,14 +154,15 @@ const Wrapper = styled.div`
   /* margin-left: .5em; */
   text-transform: capitalize;
   transition: .2s ease-in-out;
+  margin-left: 1em;
 }
 
 .btn-jobs:hover {
-  background-color: var(--clr-btn-hover);
+  background-color: var(--clr-brown-text-hover);
 }
 
 .btn-interested {
-  background-color: var(--clr-brown-text);
+  background-color: var(--clr-btn);
   font-family: inherit;
   color: var(--clr-reg-text);
   font-size: 1.2rem;
@@ -173,7 +175,7 @@ const Wrapper = styled.div`
 }
 
 .btn-interested:hover {
-  background-color: var(--clr-brown-text-hover);
+  background-color: var(--clr-btn-hover);
 }
 `
 
