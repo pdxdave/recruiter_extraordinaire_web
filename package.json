@@ -9,6 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@emailjs/browser": "^3.10.0",
     "@formspree/react": "^2.4.1",
     "axios": "^1.2.1",
     "react": "^18.2.0",

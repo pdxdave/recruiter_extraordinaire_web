@@ -74,6 +74,10 @@ const Wrapper = styled.main`
   border: none;
   border-radius: var(--radius);
   cursor: pointer;
+  transition: .2s ease-in-out;
+}
+.btn-clear:hover {
+  background-color: var(--clr-btn-hover);
 }
 
 .btn-home {
@@ -86,6 +90,11 @@ const Wrapper = styled.main`
   border-radius: var(--radius);
   cursor: pointer;
   margin-left: .5em;
+  transition: .2s ease-in-out;
+}
+
+.btn-home:hover {
+  background-color: var(--clr-brown-text-hover);
 }
   
 .search-items {

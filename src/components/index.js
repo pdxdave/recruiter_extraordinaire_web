@@ -5,7 +5,8 @@ import Services from './Services';
 import Testimonials from './Testimonials';
 import JobsList from './JobsList';
 import Job from './Job';
-import Filters from './Filters'
+import Filters from './Filters';
+import Apply from './Apply'
 
 export {
     About,
@@ -15,5 +16,6 @@ export {
     Testimonials,
     JobsList,
     Job,
-    Filters
+    Filters,
+    Apply
 }

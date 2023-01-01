@@ -1,13 +1,16 @@
-import {useEffect, } from 'react'
+import {useEffect, useState} from 'react'
 import {useParams, useNavigate} from 'react-router-dom';
 import {useJobsContext} from '../context/jobs_context'
 import {single_job_url as url} from '../utils/helper';
 import styled from 'styled-components'
 import { v4 as uuidv4 } from 'uuid';
+import {Apply} from '../components'
 
 const SingleJobPage = () => {
+  const [openModal, setOpenModal] = useState(false)
   const navigate = useNavigate()
   const {id} = useParams()
+
   const {
     single_job_loading: loading, 
     single_job_error: error, 
@@ -40,6 +43,8 @@ const SingleJobPage = () => {
     
    
   return (
+    <>
+    {openModal && <Apply closeModal={setOpenModal} />}
     <Wrapper>
       <header className='jobs_img'></header>
       <section>
@@ -86,10 +91,12 @@ const SingleJobPage = () => {
               })}
             </ul>   
         </div>
-
-
+        <div>
+          <button className='btn-interested' onClick={() => setOpenModal(true)}>I'm Interested!</button>
+        </div>
         </section>
     </Wrapper>
+    </>
   )
 }
 
@@ -145,6 +152,28 @@ const Wrapper = styled.div`
   cursor: pointer;
   /* margin-left: .5em; */
   text-transform: capitalize;
+  transition: .2s ease-in-out;
+}
+
+.btn-jobs:hover {
+  background-color: var(--clr-btn-hover);
+}
+
+.btn-interested {
+  background-color: var(--clr-brown-text);
+  font-family: inherit;
+  color: var(--clr-reg-text);
+  font-size: 1.2rem;
+  padding: .15em .4em;
+  border: none;
+  border-radius: var(--radius);
+  cursor: pointer;
+  margin-top: 1em;
+  transition: .2s ease-in-out;
+}
+
+.btn-interested:hover {
+  background-color: var(--clr-brown-text-hover);
 }
 `
 
