@@ -35,7 +35,7 @@ const Apply = ({closeModal}) => {
             <input type="email" name="user_email" />
             <label>Message</label>
             <textarea name="message" />
-            <input type="submit" className='btn-submit' value="Send" disabled="true"/>
+            <input type="submit" className='btn-submit' value="Send" />
       </form>
         </div>
       </div>
