@@ -13,7 +13,7 @@ const Apply = ({closeModal}) => {
         process.env.REACT_APP_SERVICE_ID, 
         process.env.REACT_APP_TEMPLATE_ID, 
         form.current, 
-        'isPpBt_NU6_KrRqlQ'
+        process.env.REACT_APP_PUBLIC_ID
       )
       .then((result) => {
           console.log(result.text);
