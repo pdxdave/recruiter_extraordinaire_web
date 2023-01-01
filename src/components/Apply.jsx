@@ -60,11 +60,13 @@ const Wrapper = styled.main`
   /* right: 0; */
   top: ;
   max-width: 420px;
-  height: 50vh;
+  height: auto;
   background-color: #f2f2f2;
   box-shadow: rgba(0, 0, 0, 0.35);
   display: flex;
   flex-direction: column;
+  padding-bottom: 5em;
+  border-radius: var(--radius);
 }
 form {
   padding: 5%;
