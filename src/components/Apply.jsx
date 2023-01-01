@@ -34,7 +34,7 @@ const Apply = ({closeModal}) => {
             <input type="email" name="user_email" />
             <label>Message</label>
             <textarea name="message" />
-            <input type="submit" value="Send" />
+            <input type="submit" className='btn-submit' value="Send" />
       </form>
         </div>
       </div>
@@ -89,6 +89,23 @@ input[type="text"], input[type="email"], textarea{
 }
 .apply-message {
   padding: 3em 5% 1em 5%;
+}
+
+.btn-submit {
+  background-color: var(--clr-btn);
+  font-family: inherit;
+  color: var(--clr-reg-text);
+  font-size: 1.2rem;
+  padding: .15em .4em;
+  border: none;
+  border-radius: var(--radius);
+  cursor: pointer;
+  margin-top: 1em;
+  transition: .2s ease-in-out;
+}
+
+.btn-submit:hover {
+  background-color: var(--clr-btn-hover);
 }
 `
 
