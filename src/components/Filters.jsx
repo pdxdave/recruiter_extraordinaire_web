@@ -36,7 +36,6 @@ const Filters = () => {
           </div>
           {/* cities */}
           <div className='test'>
-            {/* <h5>city</h5> */}
             <select 
                 name="city" 
                 value={city} 
