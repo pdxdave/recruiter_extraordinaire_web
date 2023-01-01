@@ -59,7 +59,7 @@ const Wrapper = styled.main`
   position: absolute;
   /* right: 0; */
   top: ;
-  max-width: 420px;
+  max-width: 375px;
   height: auto;
   background-color: #f2f2f2;
   box-shadow: rgba(0, 0, 0, 0.35);
@@ -84,7 +84,7 @@ input[type="text"], input[type="email"], textarea{
 .btn-close {
   position: absolute;
   top: 0;
-  right: 10px;
+  right: 15px;
   font-size: 1.5rem;
   cursor: pointer;
 }
