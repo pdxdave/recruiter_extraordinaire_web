@@ -57,9 +57,8 @@ const Wrapper = styled.main`
 
 .modal-container {
   position: absolute;
-  /* right: 0; */
   top: ;
-  max-width: 360px;
+  max-width: 340px;
   height: auto;
   background-color: #f2f2f2;
   box-shadow: rgba(0, 0, 0, 0.35);
