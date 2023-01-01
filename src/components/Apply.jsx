@@ -3,16 +3,17 @@ import {useRef} from 'react'
 import emailjs from '@emailjs/browser';
 
 const Apply = ({closeModal}) => {
+
   const form = useRef();
 
   const sendEmail = (e) => {
     e.preventDefault();
 
     emailjs.sendForm(
-        'service_2kr6q4j', 
-        'template_bvxvzoi', 
+        process.env.REACT_APP_SERVICE_ID, 
+        process.env.REACT_APP_TEMPLATE_ID, 
         form.current, 
-        'isPpBt_NU6_KrRqlQ'
+        process.env.REACT_APP_USER_ID
       )
       .then((result) => {
           console.log(result.text);
@@ -34,7 +35,7 @@ const Apply = ({closeModal}) => {
             <input type="email" name="user_email" />
             <label>Message</label>
             <textarea name="message" />
-            <input type="submit" className='btn-submit' value="Send" />
+            <input type="submit" className='btn-submit' value="Send" disabled="true"/>
       </form>
         </div>
       </div>
