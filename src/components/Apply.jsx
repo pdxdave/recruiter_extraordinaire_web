@@ -59,7 +59,7 @@ const Wrapper = styled.main`
   position: absolute;
   /* right: 0; */
   top: ;
-  max-width: 375px;
+  max-width: 360px;
   height: auto;
   background-color: #f2f2f2;
   box-shadow: rgba(0, 0, 0, 0.35);
