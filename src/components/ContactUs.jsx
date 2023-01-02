@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import {useRef} from 'react'
 import emailjs from '@emailjs/browser';
 
-const Apply = ({closeModal}) => {
+export const ContactUs = ({closeModal}) => {
 
   const form = useRef();
 
@@ -11,10 +11,10 @@ const Apply = ({closeModal}) => {
     e.preventDefault();
 
     emailjs.sendForm(
-        process.env.REACT_APP_EMAILJS_SERVICE_ID, 
-        process.env.REACT_APP_EMAILJS_TEMPLATE_ID, 
+        process.env.VITE_APP_EMAILJS_SERVICE_ID, 
+        process.env.VITE_APP_EMAILJS_TEMPLATE_ID, 
         form.current, 
-        process.env.REACT_APP_EMAILJS_PUBLIC_KEY
+        process.env.VITE_APP_EMAILJS_PUBLIC_KEY
       )
       .then((result) => {
           console.log(result.text);
@@ -110,5 +110,3 @@ input[type="text"], input[type="email"], textarea{
   background-color: var(--clr-btn-hover);
 }
 `
-
-export default Apply

@@ -4,7 +4,7 @@ import {useJobsContext} from '../context/jobs_context'
 import {single_job_url as url} from '../utils/helper';
 import styled from 'styled-components'
 import { v4 as uuidv4 } from 'uuid';
-import {Apply} from '../components'
+import {ContactUs} from '../components/ContactUs'
 
 const SingleJobPage = () => {
   const [openModal, setOpenModal] = useState(false)
@@ -44,7 +44,7 @@ const SingleJobPage = () => {
    
   return (
     <>
-    {openModal && <Apply closeModal={setOpenModal} />}
+    {openModal && <ContactUs closeModal={setOpenModal} />}
     <Wrapper>
       <header className='jobs_img'></header>
       <section>
