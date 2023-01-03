@@ -1,11 +1,13 @@
-
+import { useState } from 'react';
 import styled from 'styled-components';
 import { useForm, ValidationError } from '@formspree/react';
 
 
+
+
 const Apply = ({closeModal, title}) => {
   const [state, handleSubmit] = useForm("xnqyanzz");
- 
+  const [dis, setDis] = useState(true)
 
   const funky = (e) => {
     e.preventDefault()
@@ -26,13 +28,20 @@ const Apply = ({closeModal, title}) => {
                     type="job" 
                     name="job"
                     value={title}
-                    hidden
+                    readOnly
+                    className='job-title'
+                />
+                <ValidationError 
+                    prefix="job" 
+                    field="job"
+                    errors={state.errors}
                 />
                 <label htmlFor="name">Name</label>
                 <input
                     id="name"
                     type="name" 
                     name="name"
+                    required
                 />
                 <ValidationError 
                     prefix="Name" 
@@ -46,6 +55,7 @@ const Apply = ({closeModal, title}) => {
                     id="email"
                     type="email" 
                     name="email"
+                    required
                 />
                 <ValidationError 
                     prefix="Email" 
@@ -65,7 +75,7 @@ const Apply = ({closeModal, title}) => {
                     field="message"
                     errors={state.errors}
                 />
-                <button type="submit" disabled={state.submitting} className="btn-submit">
+                <button type="submit" disabled={state.submitting} className="btn-submit" >
                     Submit
                 </button>
             </form>
@@ -108,10 +118,11 @@ label {
   width: 378px;
   max-width: 100%;
 }
-input[type="name"], input[type="email"], textarea{
+input[type="name"], input[type="email"], input[type="job"], textarea{
   padding: .25em;
   font-size: 1.2rem;
   width: 95%;
+  outline: none;
 }
 .btn-close {
   position: absolute;
@@ -142,6 +153,12 @@ input[type="name"], input[type="email"], textarea{
 }
 span {
   font-weight: bold;
+}
+.job-title {
+  color: lightgray;
+}
+textarea {
+  resize: none;
 }
 `
 
