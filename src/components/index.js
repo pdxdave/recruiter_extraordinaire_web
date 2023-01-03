@@ -6,6 +6,7 @@ import Testimonials from './Testimonials';
 import JobsList from './JobsList';
 import Job from './Job';
 import Filters from './Filters';
+import Apply from './Apply'
 
 export {
     About,
@@ -16,4 +17,5 @@ export {
     JobsList,
     Job,
     Filters,
+    Apply
 }
