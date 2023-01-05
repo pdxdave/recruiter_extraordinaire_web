@@ -15,7 +15,7 @@ const Header = () => {
                 <h1>YOUR TECHNOLOGY</h1>
                 <h1>STAFFING SOLUTION</h1>
                 <p className='header_pitch__content'>
-                  For over 30 years Recruiter Extraordinaire has staffed
+                  For over 20 years Recruiter Extraordinaire has staffed
                   leading software engineering companies with their most 
                   difficult to find talent.  We know tech.  We know how to fill 
                   your needs.

@@ -12,11 +12,11 @@ const About = () => {
                 <p>Mary Frances Hunter, the founder of Recruiter Extraordinaire, 
                     began her successful career in the heart of Silicon Valley,
                     where the cutting edge of technology we know and use today,
-                    began.  She is solely responsible for putting together 
-                    IBM's first Object Technology Practice team.  With the 
+                    began.  She has staffed US companies from coast-to-coast with 
+                    highly technical, successful and sought-after talent.  With the 
                     creation of Recruiter Extraordinaire, she has continued
                     to impact companies large and small with her ability to find
-                    the niche talent successful companies require.
+                    the niche talent leading companies require.
                 </p> 
             </div>
             <img src={meeting} alt="team members meeting" />
