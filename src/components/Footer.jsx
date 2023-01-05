@@ -270,10 +270,10 @@ const Wrapper = styled.footer`
     display: none;
    }
 
-   .footer_logo__email, .footer_logo__call {
+   .footer_logo__linkedin, .footer_logo__call {
     padding-top: 1em;
    }
-    .logo_email, .logo_call {
+    .logo_linkedin, .logo_call {
         position: relative;
         font-size: 1.5rem;
         background: transparent;
@@ -282,7 +282,7 @@ const Wrapper = styled.footer`
         width: 40px;
     } 
 
-    .logo_email__item, .logo_call__item {
+    .logo_linkedin__item, .logo_call__item {
         position: absolute; 
         top: 10px;
         left: 10px;
