@@ -1,7 +1,8 @@
 import styled from 'styled-components';
 import { useForm, ValidationError } from '@formspree/react';
 import {BsTelephone} from 'react-icons/bs'
-import {AiOutlineMail} from 'react-icons/ai'
+// import {AiOutlineMail} from 'react-icons/ai'
+import {CiLinkedin} from 'react-icons/ci'
 
 
 function ContactForm(){
@@ -26,17 +27,17 @@ function ContactForm(){
                 </div>
                 <div className='footer_logo__contact'>
                     <p>Phone</p>
-                    <p>503-222-4444</p>
+                    <p>503-232-8822</p>
                 </div>
             </div>
 
-            <div className='footer_logo__email'>
-                <div className='logo_email'>
-                      <AiOutlineMail   className='logo_email__item' />
+            <div className='footer_logo__linkedin'>
+                <div className='logo_linkedin'>
+                      <CiLinkedin   className='logo_linkedin__item' />
                 </div>
                 <div className='footer_logo__contact'>
-                    <p>Email</p>
-                    <p>mfhunter@you.com</p>
+                    <p>LinkedIn</p>
+                    <a href='https://www.linkedin.com/in/mary-frances-hunter/'>Mary Frances Hunter</a>
                 </div>
             </div>
             
@@ -155,14 +156,14 @@ const Wrapper = styled.footer`
 
         align-items: center;
     }
-    .footer_logo__email {
+    .footer_logo__linkedin{
         grid-area: email;
         display: grid;
         grid-template-columns: .4fr 2fr;
         align-items: center;
     }
     
-    .logo_email, .logo_call {
+   .logo_linkedin, .logo_call {
         position: relative;
         font-size: 2.5rem;
         background: var(--clr-brown-text);
@@ -171,7 +172,7 @@ const Wrapper = styled.footer`
         height: 80px;
         width: 80px;
     }
-    .logo_email__item, .logo_call__item {
+    .logo_linkedin__item, .logo_call__item {
         position: absolute;
         top: 20px;
         left: 20px;
@@ -237,6 +238,9 @@ const Wrapper = styled.footer`
     background: var(--clr-btn-hover);
    }
 
+   a {
+    color: var(--clr-reg-text)
+   }
    @media screen and (max-width: 1020px){
 
     .footer_container {

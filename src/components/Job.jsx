@@ -28,7 +28,7 @@ const Job = ({jobs}) => {
                   <div className='desc'>
                     <MdDescription className='desc-icon'/>
                     <p>{description && description.slice(0, 180)}...<Link to={`/jobs-page/${id}`}>
-                      More Details
+                      <span>More Details</span> 
                   </Link>  </p>
                   </div> 
                  
@@ -88,6 +88,10 @@ const Wrapper = styled.div`
   .desc-icon {
     color: var(--clr-desc);
     margin-top: .25em;
+  }
+
+  span {
+    color: var(--clr-btn);
   }
 
   @media screen and (max-width: 647px){
